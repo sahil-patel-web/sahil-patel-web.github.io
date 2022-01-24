@@ -119,7 +119,16 @@ function draw() {
 function Mover(m, x, y) {
 	this.mass = m;
 	this.position = createVector(x, y);
-	this.velocity = createVector( random(-5,5) , random(-5,5));
+	if (m == 1){
+		this.velocity = createVector( random(-5,5) , random(-5,5));
+	}
+	else if (m == 2){
+		this.velocity = createVector( random(-3,3) , random(-3,3));
+	}
+	else {
+		this.velocity = createVector( random(-1,1) , random(-1,1));
+	}
+	
 	this.acceleration = createVector(0, 0);
   }
 Mover.prototype.update = function() {
